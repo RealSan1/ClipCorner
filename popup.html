@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    body {
+      width: 300px;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    header.card-header {
+      display: block;
+      margin: 0;
+      background: linear-gradient(135deg, #c00 0%, #a00 100%);
+      color: #fff;
+      padding: 12px 14px 10px;
+      text-align: left;
+    }
+
+    .card-header h1 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .card-header p {
+      margin: 4px 0 0;
+      font-size: 11px;
+      opacity: 0.92;
+      font-weight: 400;
+    }
+
+    main.card-body {
+      display: block;
+      margin: 0;
+      padding: 12px 14px 14px;
+    }
+
+    .howto {
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      font-size: 10px;
+      line-height: 1.45;
+      color: #4b5563;
+      text-align: left;
+      background: #f9fafb;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .howto strong {
+      color: #1f2937;
+    }
+
+    label.field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    input[type="text"]::placeholder {
+      color: #9ca3af;
+    }
+
+    input[type="text"]:hover {
+      border-color: #bfc4cc;
+      background: #fff;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #c00;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.12);
+    }
+
+    .opacity-block {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #eef0f4;
+    }
+
+    .opacity-block label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 8px;
+      height: 6px;
+      border-radius: 3px;
+      accent-color: #c00;
+      cursor: pointer;
+    }
+
+    .opacity-hint {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 6px;
+      text-align: left;
+    }
+
+    .opacity-hint strong {
+      color: #c00;
+      font-weight: 700;
+    }
+
+    .toggle-row {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #eef0f4;
+      text-align: left;
+    }
+
+    .toggle-row label.toggle-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+      margin: 0;
+    }
+
+    .toggle-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      flex-shrink: 0;
+      accent-color: #c00;
+      cursor: pointer;
+    }
+
+    .toggle-hint {
+      margin: 6px 0 0 28px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #6b7280;
+    }
+
+    button#saveUrl {
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(180deg, #d11 0%, #b00 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+      transition: filter 0.15s, transform 0.1s;
+    }
+
+    button#saveUrl:hover {
+      filter: brightness(1.06);
+    }
+
+    button#saveUrl:active {
+      transform: scale(0.98);
+    }
+
+    .notice {
+      margin: 10px 0 0;
+      padding: 8px 10px 8px 11px;
+      text-align: left;
+      font-size: 10px;
+      line-height: 1.45;
+      color: #78350f;
+      background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      border-left: 3px solid #f59e0b;
+    }
+
+    .notice-title {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+      font-size: 11px;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+
+    .notice-title span.icon {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="card-header">
+    <h1>YouTube Overlay</h1>
+    <p>Pick a region — hover optional (see toggle below)</p>
+  </header>
+  <main class="card-body">
+    <p class="howto">
+      <strong>How:</strong> Save link → <strong>right-click</strong> the page →
+      <strong>Choose where the video appears</strong> → <strong>click</strong> the spot. <strong>Esc</strong> cancels.
+    </p>
+    <label class="field-label" for="videoUrl">Your YouTube link</label>
+    <input type="text" id="videoUrl" placeholder="Paste YouTube link" autocomplete="off" spellcheck="false" />
+
+    <div class="opacity-block">
+      <label for="overlayOpacity">How see-through is the video?</label>
+      <input type="range" id="overlayOpacity" min="0" max="100" value="85" />
+      <div class="opacity-hint"><strong id="opacityLabel">85</strong>% — lower = more page shows through</div>
+    </div>
+
+    <div class="toggle-row">
+      <label class="toggle-main" for="onlyShowVideoOnHover">
+        <input type="checkbox" id="onlyShowVideoOnHover" checked />
+        <span>Only show video on hover</span>
+      </label>
+      <p class="toggle-hint">
+        <strong>Off:</strong> the video stays visible in the picked area (no hover). <strong>On:</strong> move the
+        mouse over the area to play.
+      </p>
+    </div>
+
+    <button type="button" id="saveUrl">Save</button>
+
+    <aside class="notice" role="note">
+      <div class="notice-title">
+        <span class="icon" aria-hidden="true">⚠</span>
+        Video won’t play?
+      </div>
+      <p>
+        <strong>Ad blockers</strong> often block embedded YouTube. Pause the blocker on this site or allow YouTube.
+      </p>
+    </aside>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
