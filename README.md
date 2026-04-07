@@ -1,6 +1,7 @@
 # Clip Corner
 
-**Manifest V3** 기반 크롬 확장 프로그램입니다. YouTube 링크를 저장한 뒤, 일반 웹페이지에서 **원하는 영역을 골라** 그 위에 임베드 플레이어를 올려 둡니다. 투명도와 **호버 시에만 표시** 여부를 팝업에서 조절할 수 있습니다.
+**Manifest** 기반 크롬 확장 프로그램입니다. YouTube 링크를 저장한 뒤, 일반 웹페이지에서 **원하는 영역을 골라** 그 위에 임베드 플레이어를 올려 둡니다. 투명도와 **호버 시에만 표시** 여부를 팝업에서 조절할 수 있습니다.
+![gif](https://github.com/user-attachments/assets/de1ccf71-d07f-4eb0-aff3-91974f03569e)
 
 ## 주요 기능
 
@@ -46,4 +47,4 @@
 
 ## 요구 사항
 
-- Google Chrome(또는 Chromium 계열 브라우저)에서 **Manifest V3** 지원 버전
+- Google Chrome
